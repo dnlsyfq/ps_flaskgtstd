@@ -6,7 +6,11 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     # return "Welcome to my Flash Cards application"
-    return render_template("welcome.html")
+    return render_template(
+        "welcome.html",
+        message="Here a message from view",
+        x=42
+    )
 
 
 # @app.route("/date")    
