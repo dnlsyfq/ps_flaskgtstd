@@ -28,3 +28,27 @@ flask run
 MVC vs MTv
 
 #### Jinja templates 
+
+```
+<html>
+    <head>
+        <title>{{name}} 's Page </title>
+    </head>
+    <body>
+        <h1>{{name}}</h1>
+    </body>
+
+</html>
+```
+
+#### Calling a template from view
+
+```
+from flask import render_template
+def welcome():
+    return render_template(
+        "welcome.html",
+        name="Bob",
+        age=35
+    )
+```
