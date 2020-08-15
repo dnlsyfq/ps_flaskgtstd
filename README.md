@@ -23,3 +23,8 @@ flask run
 >> import flashcards
 >> flashcards.app.url_map
 ```
+
+### Model-Template-View components
+MVC vs MTv
+
+#### Jinja templates 
