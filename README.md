@@ -52,3 +52,16 @@ def welcome():
         age=35
     )
 ```
+
+```
+pip3 install -r requirements.txt
+sudo apt install gunicorn3
+gunicorn3 -D flashcards:app
+CD /etc/nginx/sites-available
+rm default
+
+default 
+copy paste gunicorn
+sudo service nginx restart
+
+```
