@@ -1,6 +1,7 @@
-from flask import Flask, render_template,abort
+from flask import Flask, render_template,abort,jsonify
 # from datetime import datetime
 from model import db
+
 
 app = Flask(__name__)
 
@@ -39,6 +40,9 @@ def card_view(index):
     except IndexError:
         abort(404)
 
+@app.route('/add_card')
+def add_card():
+    return render_template('add_card.html')
     
 
 # @app.route("/date")    
@@ -53,3 +57,15 @@ def card_view(index):
 #     counter += 1
 #     return "This page was views " + str(counter) + " times"
 
+@app.route('/api/card/')
+def api_card_list():
+    return jsonify(db) 
+
+@app.route('/api/card/<int:index>')
+def api_card_detail(index):
+    try:
+        return db[index]
+    except IndexError:
+        abort(404)
+        
+        
